@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "YoMJFk05E1U=",
+  "success": true,
+  "projectFilePath": "C:\\Work\\pnx\\SILViewer\\SILViewer\\SILViewer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\smartinspect\\3.5.0.58\\smartinspect.3.5.0.58.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\smartinspect.sdk\\3.5.0.58\\smartinspect.sdk.3.5.0.58.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

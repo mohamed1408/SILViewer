@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Work\\pnx\\SILViewer\\SILViewer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BCF577A7-1289-426A-8342-674252C0EF75}|SILViewer.csproj|c:\\work\\pnx\\silviewer\\silviewer\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF577A7-1289-426A-8342-674252C0EF75}|SILViewer.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BCF577A7-1289-426A-8342-674252C0EF75}|SILViewer.csproj|c:\\work\\pnx\\silviewer\\silviewer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{BCF577A7-1289-426A-8342-674252C0EF75}|SILViewer.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCF577A7-1289-426A-8342-674252C0EF75}|SILViewer.csproj|c:\\work\\pnx\\silviewer\\silviewer\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCF577A7-1289-426A-8342-674252C0EF75}|SILViewer.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Work\\pnx\\SILViewer\\SILViewer\\obj\\Debug\\net8.0-windows\\MainWindow.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net8.0-windows\\MainWindow.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF577A7-1289-426A-8342-674252C0EF75}|SILViewer.csproj|c:\\work\\pnx\\silviewer\\silviewer\\window1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF577A7-1289-426A-8342-674252C0EF75}|SILViewer.csproj|solutionrelative:window1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BCF577A7-1289-426A-8342-674252C0EF75}|SILViewer.csproj|c:\\work\\pnx\\silviewer\\silviewer\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -17,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BCF577A7-1289-426A-8342-674252C0EF75}|SILViewer.csproj|c:\\work\\pnx\\silviewer\\silviewer\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{BCF577A7-1289-426A-8342-674252C0EF75}|SILViewer.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Work\\pnx\\SILViewer\\SILViewer\\obj\\Debug\\net8.0-windows\\MainWindow.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net8.0-windows\\MainWindow.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,22 +34,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 157,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "Window1.xaml.cs",
+              "DocumentMoniker": "C:\\Work\\pnx\\SILViewer\\SILViewer\\Window1.xaml.cs",
+              "RelativeDocumentMoniker": "Window1.xaml.cs",
+              "ToolTip": "C:\\Work\\pnx\\SILViewer\\SILViewer\\Window1.xaml.cs",
+              "RelativeToolTip": "Window1.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T18:43:09.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Window1.xaml",
               "DocumentMoniker": "C:\\Work\\pnx\\SILViewer\\SILViewer\\Window1.xaml",
               "RelativeDocumentMoniker": "Window1.xaml",
               "ToolTip": "C:\\Work\\pnx\\SILViewer\\SILViewer\\Window1.xaml",
               "RelativeToolTip": "Window1.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-23T07:19:33.3Z"
+              "WhenOpened": "2024-06-23T07:19:33.3Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Work\\pnx\\SILViewer\\SILViewer\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -57,31 +74,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "MainWindow.g.i.cs",
               "DocumentMoniker": "C:\\Work\\pnx\\SILViewer\\SILViewer\\obj\\Debug\\net8.0-windows\\MainWindow.g.i.cs",
               "RelativeDocumentMoniker": "obj\\Debug\\net8.0-windows\\MainWindow.g.i.cs",
               "ToolTip": "C:\\Work\\pnx\\SILViewer\\SILViewer\\obj\\Debug\\net8.0-windows\\MainWindow.g.i.cs",
               "RelativeToolTip": "obj\\Debug\\net8.0-windows\\MainWindow.g.i.cs",
-              "ViewState": "AQIAAG8AAAAAAAAAAAAtwDIAAAAUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADoAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T21:04:36.073Z"
+              "WhenOpened": "2024-06-22T21:04:36.073Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Work\\pnx\\SILViewer\\SILViewer\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Work\\pnx\\SILViewer\\SILViewer\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAwwEoAAAAJAAAA",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAvwGIAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T21:04:27.439Z"
+              "WhenOpened": "2024-06-22T21:04:27.439Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Work\\pnx\\SILViewer\\SILViewer\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",

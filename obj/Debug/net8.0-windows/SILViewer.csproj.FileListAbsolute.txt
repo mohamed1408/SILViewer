@@ -24,3 +24,4 @@ C:\Work\pnx\SILViewer\SILViewer\bin\Debug\net8.0-windows\SmartInspect.dll
 C:\Work\pnx\SILViewer\SILViewer\bin\Debug\net8.0-windows\SmartInspect.SDK.dll
 C:\Work\pnx\SILViewer\SILViewer\obj\Debug\net8.0-windows\SILViewer.csproj.AssemblyReference.cache
 C:\Work\pnx\SILViewer\SILViewer\obj\Debug\net8.0-windows\SILViewer.csproj.Up2Date
+C:\Work\pnx\SILViewer\SILViewer\obj\Debug\net8.0-windows\SILViewer.sourcelink.json

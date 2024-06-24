@@ -20,52 +20,15 @@ namespace SILViewer;
 public partial class MainWindow : Window
 {
     public ObservableCollection<TabItemViewModel> TabItems { get; set; }
+    public ObservableCollection<LogItem> LogItems { get; set; }
     public MainWindow()
     {
         InitializeComponent();
         DataContext = this;
         // Initialize the collection of TabItems
         TabItems = new ObservableCollection<TabItemViewModel>();
+        LogItems = new ObservableCollection<LogItem>();
         OpenSilFile(@"C:\Work\pnx\CAD client logs\phoenixlog-2024-05-30-01-09-15.sil");
-        //TabItems.Add(new TabItemViewModel
-        //{
-        //    Header = "Tab 1",
-        //    Items = new ObservableCollection<ListViewItemViewModel>
-        //        {
-        //            new ListViewItemViewModel { Column1 = "Item 1.1", Column2 = "Item 1.2" },
-        //            new ListViewItemViewModel { Column1 = "Item 1.3", Column2 = "Item 1.4" }
-        //        }
-        //});
-        //TabItems.Add(new TabItemViewModel
-        //{
-        //    Header = "Tab 2",
-        //    Items = new ObservableCollection<ListViewItemViewModel>
-        //        {
-        //            new ListViewItemViewModel { Column1 = "Item 2.1", Column2 = "Item 2.2" },
-        //            new ListViewItemViewModel { Column1 = "Item 2.3", Column2 = "Item 2.4" }
-        //        }
-        //});
-        //TabItems.Add(new TabItemViewModel
-        //{
-        //    Header = "Tab 3",
-        //    Items = new ObservableCollection<ListViewItemViewModel>
-        //        {
-        //            new ListViewItemViewModel { Column1 = "Item 3.1", Column2 = "Item 3.2" },
-        //            new ListViewItemViewModel { Column1 = "Item 3.3", Column2 = "Item 3.4" }
-        //        }
-        //});
-    }
-    private void NewMenuItem_Click(object sender, RoutedEventArgs e)
-    {
-        //TabItems.Add(new TabItemViewModel
-        //{
-        //    Header = "Tab 4",
-        //    Items = new ObservableCollection<ListViewItemViewModel>
-        //        {
-        //            new ListViewItemViewModel { Column1 = "Item 4.1", Column2 = "Item 4.2" },
-        //            new ListViewItemViewModel { Column1 = "Item 4.3", Column2 = "Item 4.4" }
-        //        }
-        //});
     }
     private async void OpenSilFile(string fileName)
     {
@@ -74,7 +37,7 @@ public partial class MainWindow : Window
         TabItemViewModel viewModel = new TabItemViewModel
         {
             Header = Path.GetFileName(fileName),
-            Items = new ObservableCollection<ListViewItemViewModel>()
+            Items = new ObservableCollection<LogItem>()
         };
         using (ILog log = new LogFile(fileName))
         {
@@ -92,18 +55,15 @@ public partial class MainWindow : Window
                         icon += "Error.png";
                     else if (logEntry.Level == Level.Fatal)
                         icon += "FatalError.png";
-                    viewModel.Items.Add(new ListViewItemViewModel { Icon = icon, ThreadId = logEntry.ThreadId.ToString(), TimeStamp = logEntry.Timestamp.ToString(), Title = logEntry.Title });
-                    // If it is a LogEntry, add a new row to the DataGridView
-                    // with the LogEntry's level, size, and title properties
-                    //dataGridView1.Rows.Add(
-                    //    logEntry.Level.ToString(),
-                    //    logEntry.Size,
-                    //    logEntry.Title
-                    //);
+                    viewModel.Items.Add(new LogItem { Icon = icon, ThreadId = logEntry.ThreadId.ToString(), TimeStamp = logEntry.Timestamp.ToString(), Title = logEntry.Title, Level = logEntry.Level.ToString() });
                 }
             }
             TabItems.Add(viewModel);
         }
+    }
+    private void NewMenuItem_Click(object sender, RoutedEventArgs e)
+    {
+        TabItems.Add(new TabItemViewModel { Header = "Tab2", Items = new ObservableCollection<LogItem>() });
     }
     private void OpenMenuItem_Click(object sender, RoutedEventArgs e)
     {
@@ -133,18 +93,28 @@ public partial class MainWindow : Window
     {
         MessageBox.Show("About menu item clicked!");
     }
+
+    private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        TabItem tabItem = sender as TabItem;
+        if(tabItem != null)
+        {
+            string header = tabItem.Header.ToString();
+        }
+    }
 }
 public class TabItemViewModel
 {
     public string Header { get; set; }
-    public ObservableCollection<ListViewItemViewModel> Items { get; set; }
+    public ObservableCollection<LogItem> Items { get; set; }
 }
 
-public class ListViewItemViewModel
+public class LogItem
 {
     public string Icon { get; set; }
     public string Title { get; set; }
     public string ThreadId { get; set; }
     public string TimeStamp { get; set; }
+    public string Level { get; set; }
     // Add more properties as needed for additional columns
 }

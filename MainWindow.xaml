@@ -14,36 +14,7 @@
             <Setter Property="Background" Value="WhiteSmoke"/>
         </Style>
 
-        <!-- Style for ListViewItems -->
-        <Style x:Key="ListViewItemStyle" TargetType="{x:Type ListViewItem}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ListViewItem}">
-                        <Border x:Name="border"
-                                Background="Transparent"
-                                BorderBrush="Transparent"
-                                BorderThickness="1"
-                                SnapsToDevicePixels="True">
-                            <ContentPresenter />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsSelected" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="LightBlue"/>
-                                <Setter TargetName="border" Property="BorderBrush" Value="DarkBlue"/>
-                            </Trigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsSelected" Value="True"/>
-                                    <Condition Property="Selector.IsSelectionActive" Value="False"/>
-                                </MultiTrigger.Conditions>
-                                <Setter TargetName="border" Property="Background" Value="LightGray"/>
-                                <Setter TargetName="border" Property="BorderBrush" Value="Gray"/>
-                            </MultiTrigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+        <CollectionViewSource x:Key="FilteredItems" Source="{Binding LogItems}" />
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -81,23 +52,27 @@
 
             <!-- Left Section (Split into 3 vertical partitions) -->
             <StackPanel Grid.Column="0">
-                <Expander Grid.Row="0" Header="Details">
-                    <StackPanel>
-                        <TextBlock Text="Content for Section 1" Margin="5"/>
-                        <Button Content="Button 1" Margin="5"/>
-                    </StackPanel>
+                <Expander Header="Details" IsExpanded="True">
+                    <GroupBox Header="Section 1" Margin="10">
+                        <StackPanel>
+                            <TextBlock Text="Content for Section 1" Margin="5"/>
+                            <Button Content="Button 1" Margin="5"/>
+                        </StackPanel>
+                    </GroupBox>
                 </Expander>
-                <Expander Grid.Row="1" Header="Go To">
+                <!--<Expander Header="Go To">
                     <StackPanel>
                         <TextBlock Text="Content for Section 1" Margin="5"/>
                         <Button Content="Button 1" Margin="5"/>
                     </StackPanel>
-                </Expander>
-                <Expander Grid.Row="2" Header="Filter">
-                    <StackPanel>
-                        <TextBlock Text="Content for Section 1" Margin="5"/>
-                        <Button Content="Button 1" Margin="5"/>
-                    </StackPanel>
+                </Expander>-->
+                <Expander Header="Filter" IsExpanded="True">
+                    <GroupBox Header="Section 1" Margin="10">
+                        <StackPanel>
+                            <TextBlock Text="Content for Section 1" Margin="5"/>
+                            <Button Content="Button 1" Margin="5"/>
+                        </StackPanel>
+                    </GroupBox>
                 </Expander>
             </StackPanel>
             <!--<Grid Grid.Column="0">
@@ -149,7 +124,7 @@
             <GridSplitter Grid.Column="1" Width="{StaticResource SplitterSize}" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
 
             <!-- Right Section with TabControl -->
-            <TabControl Grid.Column="2" Margin="10" ItemsSource="{Binding TabItems}">
+            <TabControl x:Name="TabControl" Grid.Column="2" Margin="10" ItemsSource="{Binding TabItems}" SelectionChanged="TabControl_SelectionChanged">
                 <TabControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Header}"/>

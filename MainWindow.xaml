@@ -6,32 +6,44 @@
         xmlns:local="clr-namespace:SILViewer"
         mc:Ignorable="d"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="450"
+        Width="800">
     <Window.Resources>
         <sys:Double x:Key="SplitterSize">5</sys:Double>
 
         <Style TargetType="GridSplitter">
-            <Setter Property="Background" Value="WhiteSmoke"/>
+            <Setter Property="Background"
+                    Value="WhiteSmoke" />
         </Style>
 
-        <CollectionViewSource x:Key="FilteredItems" Source="{Binding LogItems}" />
+        <CollectionViewSource x:Key="FilteredItems"
+                              Source="{Binding LogItems}" />
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
-                <MenuItem Header="_New" Click="NewMenuItem_Click"/>
-                <MenuItem Header="_Open" Click="OpenMenuItem_Click"/>
-                <MenuItem Header="_Save" Click="SaveMenuItem_Click"/>
-                <Separator/>
-                <MenuItem Header="_Exit" Click="ExitMenuItem_Click"/>
+                <MenuItem Header="_New"
+                          Click="NewMenuItem_Click" />
+                <MenuItem Header="_Open"
+                          Click="OpenMenuItem_Click" />
+                <MenuItem Header="_Save"
+                          Click="SaveMenuItem_Click" />
+                <Separator />
+                <MenuItem Header="_Exit"
+                          Click="ExitMenuItem_Click" />
             </MenuItem>
             <MenuItem Header="_Edit">
-                <MenuItem Header="_Cut" Click="CutMenuItem_Click"/>
-                <MenuItem Header="_Copy" Click="CopyMenuItem_Click"/>
-                <MenuItem Header="_Paste" Click="PasteMenuItem_Click"/>
+                <MenuItem Header="_Cut"
+                          Click="CutMenuItem_Click" />
+                <MenuItem Header="_Copy"
+                          Click="CopyMenuItem_Click" />
+                <MenuItem Header="_Paste"
+                          Click="PasteMenuItem_Click" />
             </MenuItem>
             <MenuItem Header="_Help">
-                <MenuItem Header="_About" Click="AboutMenuItem_Click"/>
+                <MenuItem Header="_About"
+                          Click="AboutMenuItem_Click" />
             </MenuItem>
         </Menu>
 
@@ -45,18 +57,22 @@
         <!-- Main Content Area -->
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.3*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.3*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <!-- Left Section (Split into 3 vertical partitions) -->
             <StackPanel Grid.Column="0">
-                <Expander Header="Details" IsExpanded="True">
-                    <GroupBox Header="Section 1" Margin="10">
+                <Expander Header="Details"
+                          IsExpanded="True">
+                    <GroupBox Header="Section 1"
+                              Margin="10">
                         <StackPanel>
-                            <TextBlock Text="Content for Section 1" Margin="5"/>
-                            <Button Content="Button 1" Margin="5"/>
+                            <TextBlock Text="Content for Section 1"
+                                       Margin="5" />
+                            <Button Content="Button 1"
+                                    Margin="5" />
                         </StackPanel>
                     </GroupBox>
                 </Expander>
@@ -66,94 +82,81 @@
                         <Button Content="Button 1" Margin="5"/>
                     </StackPanel>
                 </Expander>-->
-                <Expander Header="Filter" IsExpanded="True">
-                    <GroupBox Header="Section 1" Margin="10">
+                <Expander Header="Filter"
+                          IsExpanded="True">
+                    <GroupBox Header="Section 1"
+                              Margin="10">
                         <StackPanel>
-                            <TextBlock Text="Content for Section 1" Margin="5"/>
-                            <Button Content="Button 1" Margin="5"/>
+                            <CheckBox Content="Message"
+                                      Unchecked="CheckBox_Checked"
+                                      Checked="CheckBox_Checked" />
+                            <CheckBox Content="Error"
+                                      Unchecked="CheckBox_Checked"
+                                      Checked="CheckBox_Checked" />
+                            <CheckBox Content="Fatal"
+                                      Unchecked="CheckBox_Checked"
+                                      Checked="CheckBox_Checked" />
                         </StackPanel>
                     </GroupBox>
                 </Expander>
             </StackPanel>
-            <!--<Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    --><!--<RowDefinition Height="Auto"/>--><!--
-                    <RowDefinition Height="*"/>
-                    --><!--<RowDefinition Height="Auto"/>--><!--
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
-                <Expander Grid.Row="0" Header="Details">
-                    <Grid Background="#FFE5E5E5"/>
-                </Expander>
-                <Expander Grid.Row="1" Header="Go To">
-                    <Grid Background="#FFE5E5E5"/>
-                </Expander>
-                <Expander Grid.Row="2" Header="Filter">
-                    <Grid Background="#FFE5E5E5"/>
-                </Expander>
-
-                --><!--<GroupBox Header="Details" Grid.Row="0" Margin="10">
-                    <StackPanel>
-                        <TextBlock Text="Content for Section 1" Margin="5"/>
-                        <Button Content="Button 1" Margin="5"/>
-                    </StackPanel>
-                </GroupBox>-->
-
-                <!--<GridSplitter Grid.Row="1" Height="{StaticResource SplitterSize}" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>-->
-
-                <!--<GroupBox Header="Go To" Grid.Row="2" Margin="10">
-                    <StackPanel>
-                        <TextBlock Text="Content for Section 2" Margin="5"/>
-                        <Button Content="Button 2" Margin="5"/>
-                    </StackPanel>
-                </GroupBox>-->
-
-                <!--<GridSplitter Grid.Row="3" Height="{StaticResource SplitterSize}" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>-->
-
-                <!--<GroupBox Header="Filter" Grid.Row="4" Margin="10">
-                    <StackPanel>
-                        <TextBlock Text="Content for Section 3" Margin="5"/>
-                        <Button Content="Button 3" Margin="5"/>
-                    </StackPanel>
-                </GroupBox>--><!--
-            </Grid>-->
-
-            <!-- GridSplitter -->
-            <GridSplitter Grid.Column="1" Width="{StaticResource SplitterSize}" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+            <GridSplitter Grid.Column="1"
+                          Width="{StaticResource SplitterSize}"
+                          VerticalAlignment="Stretch"
+                          HorizontalAlignment="Center" />
 
             <!-- Right Section with TabControl -->
-            <TabControl x:Name="TabControl" Grid.Column="2" Margin="10" ItemsSource="{Binding TabItems}" SelectionChanged="TabControl_SelectionChanged">
-                <TabControl.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Header}"/>
-                    </DataTemplate>
-                </TabControl.ItemTemplate>
-                <TabControl.ContentTemplate>
-                    <DataTemplate>
-                        <ListView ItemsSource="{Binding Items}">
-                            <ListView.View>
-                                <GridView>
-                                    <!-- Add more columns as needed -->
-                                    <GridViewColumn Header="Item" Width="100">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <StackPanel Orientation="Horizontal">
-                                                    <Image Source="{Binding Icon}" Width="16" Height="16" Margin="0,0,5,0"/>
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
-                                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}"/>
-                                    <GridViewColumn Header="ThreadId" DisplayMemberBinding="{Binding ThreadId}"/>
-                                    <GridViewColumn Header="TimeStamp" DisplayMemberBinding="{Binding TimeStamp}"/>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-                    </DataTemplate>
-                </TabControl.ContentTemplate>
-            </TabControl>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="0.3*" />
+                </Grid.RowDefinitions>
+                <TabControl x:Name="TabControl" Grid.Row="0" Margin="10" ItemsSource="{Binding TabItems}" SelectionChanged="TabControl_SelectionChanged">
+                    <TabControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Header}" />
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                    <TabControl.ContentTemplate>
+                        <DataTemplate>
+                            <ListView ItemsSource="{Binding Items}" SelectionChanged="ListView_SelectionChanged">
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="Height"
+                                                Value="{Binding RowHeight}" />
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListView.View>
+                                    <GridView>
+                                        <!-- Add more columns as needed -->
+                                        <GridViewColumn Header="Item"
+                                                        Width="100">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="{Binding Icon}"
+                                                               Width="16"
+                                                               Height="16"
+                                                               Margin="0,0,5,0" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Title"
+                                                        DisplayMemberBinding="{Binding Title}" />
+                                        <GridViewColumn Header="ThreadId"
+                                                        DisplayMemberBinding="{Binding ThreadId}" />
+                                        <GridViewColumn Header="TimeStamp"
+                                                        DisplayMemberBinding="{Binding TimeStamp}" />
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </DataTemplate>
+                    </TabControl.ContentTemplate>
+                </TabControl>
+                <RichTextBox x:Name="LogData" Grid.Row="1"
+                             Margin="10 0 10 10" />
+            </Grid>
         </Grid>
     </DockPanel>
 </Window>
